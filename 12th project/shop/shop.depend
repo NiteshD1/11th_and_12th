@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1520927705 source:c:\users\rr\documents\shop\src\shop.cpp
+	"shop.h"
+
+1521141998 c:\users\rr\documents\shop\include\shop.h
+	<iostream>
+
+1521186023 source:c:\users\rr\documents\shop\main.cpp
+	<iostream>
+	"shop.h"
+	<process.h>
+	<stdlib.h>
+	<fstream>
+

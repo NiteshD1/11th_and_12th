@@ -1,0 +1,69 @@
+#include"iostream.h"
+#include"process.h"
+#include"conio.h"
+
+ int FindPos(int[],int,int);
+
+ void main()
+ {
+   clrscr();
+   int AR[10],ITEM,N,index;
+   cout<<"\n How many elements in ur Array\t";
+   cin>>N;
+
+   for(int i=0;i<N;i++)
+     {
+     cout<<"\nEnter Element\t"<<i+1;
+     cin>>AR[i];
+     }
+
+  char ch='y';
+
+  while(ch=='y'||ch=='Y')
+       {
+	 cout<<"\nEnter element to be insertion\t";
+	 cin>>ITEM;
+	   if(N==10)
+	    {
+	      cout<<"\nSORRY!!!!!!!No Space\t";
+	      exit(1);
+	    }
+	 index=FindPos(AR,N,ITEM);
+	   for(i=N;i>index;i--)
+	     {  AR[i]=AR[i-1];  }
+	   AR[index]=ITEM;
+	   N+=1;
+	   cout<<"\n u wnt to insrt mor elemnt(Y/N)";
+	   cin>>ch;
+      }
+
+  cout<<"\nTHe array is show below";
+  for(i=0;i<N;i++)
+    cout<<AR[i]<<"  ";
+    cout<<endl;
+ getch();
+ }
+
+
+   int FindPos(int AR[],int size,int item)
+
+   {
+     int pos;
+     if(item<AR[0])  pos=0;
+     else
+     {
+      for(int i=0;i<size-1;i++)
+	{
+	if(AR[i]<=item && item<AR[i+1])
+	 {  pos=i+1;   break;
+	 }
+	}
+       if(i==size-1)  pos=size;
+       }
+       return pos;
+       }
+
+
+
+
+
